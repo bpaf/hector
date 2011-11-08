@@ -39,7 +39,7 @@ module Hector
           respond_with("001", nickname, :text => "Welcome to #{self.server_name}")
           welcome_message_path = Hector.root.join("config/motd.txt")
           if File.exist?(welcome_message_path)
-            respond_with("375", :text => "#{self.server_name} IRC Message Of The Day")
+            respond_with("375", :text => "Begin Message Of The Day")
             File.foreach(welcome_message_path) { |line|
               respond_with("372", :text => line)
             }
